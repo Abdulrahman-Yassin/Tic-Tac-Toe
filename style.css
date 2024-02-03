@@ -1,0 +1,133 @@
+:root {
+  --color-blue: #ecede4;
+  --color-light-blue: #e61b1b;
+  --color-dark-blue: #fb0000;
+  --color-darker-blue: #112129;
+  --color-orange: #0077ff;
+  --color-aqua: #ff0000;
+  --border-radius: 1rem;
+  --grid-rows: 3;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  font-size: 1.6rem;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--color-dark-blue);
+  background-size: cover;
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+}
+
+.container:before {
+  content: "";
+  position: absolute;
+  width: 130%;
+  height: 130%;
+  opacity: .8;
+  background: url(./background.jpeg);
+  background-size: cover;
+  filter: blur(30px);
+  z-index: -1;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-rows), 100px);
+  grid-template-rows: repeat(var(--grid-rows), 100px);
+  margin: 0 auto;
+  gap: 1.5rem;
+}
+
+.cell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 3em;
+  color: var(--color-aqua);
+  background-color: var(--color-blue);
+  border-radius: var(--border-radius);
+  isolation: isolate;
+  font-family: 'Rubik Mono One', sans-serif;
+}
+
+.cell--X {
+  color: var(--color-aqua);
+}
+
+.cell--O {
+  color: var(--color-orange);
+}
+
+.value {
+  z-index: 1;
+  user-select: none;
+}
+
+.cell:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  bottom: -0.4rem;
+  border-radius: calc(var(--border-radius) / 2);
+  background-color: var(--color-darker-blue);
+}
+
+.cell:after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: calc(var(--border-radius) / 2);
+  background-color: var(--color-blue);
+  transition: all 0.3s;
+}
+
+#reset {
+  display: inline;
+  margin: 20px ;
+  font-size: 18px;
+  cursor: pointer;
+  background: black;
+  outline: none;
+  border-radius: 10px;
+  padding: 15px 30px;
+  color: rgb(255, 255, 255);
+}
+
+.button {
+  display: inline;
+  margin: 20px ;
+  font-size: 18px;
+  cursor: pointer;
+  background: rgb(10, 243, 255);
+  outline: none;
+  border-radius: 10px;
+  border-color: nan;
+  padding: 15px 30px;
+  color: rgb(0, 0, 0);
+}
+
+.alert {
+  display:none;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <button class="button">Plus</button>
+        <button id="reset">Reset</button>
+        <button class="alert" onclick="alert();"></button>
+      </div>
+    </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+      function alert() {
+        swal (`Player ${currentPlayer} won!`)
+      }
+
+      function alert2() {
+        swal ("Draw")
+      }
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
